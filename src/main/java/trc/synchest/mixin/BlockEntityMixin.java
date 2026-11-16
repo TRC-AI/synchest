@@ -6,7 +6,7 @@ import net.minecraft.world.Containers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.BlockEntityTypes;
 import net.minecraft.world.level.block.entity.ChestBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
@@ -26,7 +26,7 @@ public abstract class BlockEntityMixin {
 		if (!TRCAddon.SYNC_ENABLED.value) return;
 
 		BlockEntity self = (BlockEntity) (Object) this;
-		if (!(self instanceof ChestBlockEntity chest) || self.getType() != BlockEntityType.CHEST) return;
+		if (!(self instanceof ChestBlockEntity chest) || self.getType() != BlockEntityTypes.CHEST) return;
 		Level level = self.getLevel();
 		if (level == null || level.isClientSide()) return;
 		if (!(state.getBlock() instanceof ChestBlock)) return;
@@ -40,7 +40,7 @@ public abstract class BlockEntityMixin {
 		BlockPos otherPos = ChestBlock.getConnectedBlockPos(pos, state);
 		BlockEntity other = level.getBlockEntity(otherPos);
 		ChestBlockEntity otherChest =
-				(other instanceof ChestBlockEntity && other.getType() == BlockEntityType.CHEST)
+				(other instanceof ChestBlockEntity && other.getType() == BlockEntityTypes.CHEST)
 						? (ChestBlockEntity) other : null;
 
 		boolean involvesNamedChest = chest.getCustomName() != null || (otherChest != null && otherChest.getCustomName() != null);

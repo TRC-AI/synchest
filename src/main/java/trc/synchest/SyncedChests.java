@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.BlockEntityTypes;
 import net.minecraft.world.level.block.entity.ChestBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
@@ -29,7 +29,7 @@ public final class SyncedChests {
     public static boolean isSyncedChest(BlockEntity be, @NotNull BlockState state) {
         if (!TRCAddon.SYNC_ENABLED.value) return false;
         if (!(be instanceof ChestBlockEntity chest)) return false;
-        if (be.getType() != BlockEntityType.CHEST) return false;
+        if (be.getType() != BlockEntityTypes.CHEST) return false;
         if (!(state.getBlock() instanceof ChestBlock)) return false;
         if (state.getValue(ChestBlock.TYPE) != ChestType.SINGLE) return false;
         return chest.getCustomName() != null;

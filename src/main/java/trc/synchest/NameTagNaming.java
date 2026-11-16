@@ -11,7 +11,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.BlockEntityTypes;
 import net.minecraft.world.level.block.entity.ChestBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
@@ -41,7 +41,7 @@ public final class NameTagNaming {
             if (level.isClientSide()) return InteractionResult.PASS;
 
             BlockEntity be = level.getBlockEntity(pos);
-            if (!(be instanceof ChestBlockEntity chest) || be.getType() != BlockEntityType.CHEST) return InteractionResult.PASS;
+            if (!(be instanceof ChestBlockEntity chest) || be.getType() != BlockEntityTypes.CHEST) return InteractionResult.PASS;
             if (!chest.isEmpty()) return InteractionResult.PASS;
 
             if (chest.getCustomName() != null && chest.getCustomName().equals(tagName)) return InteractionResult.PASS;

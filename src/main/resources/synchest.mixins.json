@@ -3,6 +3,10 @@
 	"package": "trc.synchest.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
+		"BaseContainerBlockEntityAccessor",
+		"BaseContainerBlockEntityMixin",
+		"BlockEntityMixin",
+		"ChestBlockEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

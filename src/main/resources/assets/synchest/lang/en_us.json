@@ -1,1 +1,4 @@
-{}
+{
+  "synchest.section.name": "Synced Chests",
+  "synchest.setting.sync_named_chests": "Sync named chests"
+}

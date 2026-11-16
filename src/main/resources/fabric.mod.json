@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "synchest",
+	"version": "${version}",
+	"name": "Synced Chests",
+	"description": "Chests that share the same custom name share one server-wide inventory across all dimensions.",
+	"authors": [
+		"TRC-AI"
+	],
+	"contact": {
+		"github": "https://github.com/TRC-AI/"
+	},
+	"license": "MIT",
+	"icon": "assets/synchest/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"trc_addon": [
+			"trc.synchest.TRCAddon"
+		]
+	},
+	"mixins": [
+		"synchest.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": ["26.1", "26.1.1", "26.1.2"],
+		"java": ">=25",
+		"fabric-api": ">=0.144.0",
+		"trc-core": ">=1.2"
+	}
+}
